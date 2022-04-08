@@ -1,1 +1,45 @@
-as
+#include<iostream>
+#include<conio.h>
+#include<cstdlib>
+#include<math.h>
+#include<iomanip>
+#include<ctime>
+using namespace std;
+void selection_sort(int [], int );
+int main() 
+{
+	int i,len=12;
+	int *a;
+	a=new int[len];
+	
+	srand((unsigned)time(NULL));
+	for (i=0;i<len;++i){
+		a[i]=rand() % 80;	
+	}
+		
+	selection_sort(a,len);
+	cout<<"sort array"<<endl;
+	for(i=0;i<len;++i)
+	cout<<setw(10)<<a[i];
+	delete[]a;
+	getch();
+}
+void swap(int &a,int &b ){
+	int t;
+	t=a;
+	a=b;
+	b=t;
+}
+void selection_sort(int x[], int size){
+	int *p,*m,*end;
+	end=x+size-1;
+	for (;x<end;++x){
+		m=x;
+		for(p=x+1;p<=end;++p){
+			if(*p<*m)
+			m=p;
+			swap(*x,*m);
+		}
+	}
+}
+
