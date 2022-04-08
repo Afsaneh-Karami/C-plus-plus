@@ -1,1 +1,14 @@
-df
+#include<iostream>
+#include<conio.h>
+using namespace std;
+void f(int n){
+	if (n>0){
+		f(n/2);
+		cout<<n%2;
+	}
+}
+int main(){
+	int a;
+	cin>>a;
+	f(a);
+}
